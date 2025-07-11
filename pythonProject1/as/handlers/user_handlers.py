@@ -130,7 +130,7 @@ async def get_company(message: Message, state: FSMContext):
         [InlineKeyboardButton(text="👎 Нет", callback_data="rate_no")]
     ])
 
-    await message.edit_text(f"🧠 Вот идея:\n👉 {gpt_reply}\n\nХочешь занести идею в таблицу избранное?", reply_markup=rate_kb)
+    await message.answer(f"🧠 Вот идея:\n👉 {gpt_reply}\n\nХочешь занести идею в таблицу избранное?", reply_markup=rate_kb)
 
 
 @router.callback_query(F.data == "rate_yes")
